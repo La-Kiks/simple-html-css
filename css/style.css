@@ -114,6 +114,7 @@ main {
 .search-bar {
   display: flex;
   align-items: stretch;
+  width: 100%;
   max-width: 377px;
   height: 49px;
 }
@@ -188,7 +189,6 @@ main {
 .filter-buttons {
   display: flex;
   column-gap: 10px;
-  row-gap: 20px;
 }
 
 .filter-buttons button {
@@ -241,7 +241,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30;
+  padding: 0 30px;
   gap: 30px;
   border-radius: 15px;
   max-width: 429px;
@@ -316,6 +316,7 @@ main {
   padding: 30px;
   background-color: var(--main-bg-color);
   border-radius: 15px;
+  width: 100%;
   max-width: 871px;
   height: 614px;
   box-sizing: border-box;
@@ -332,6 +333,7 @@ h3 {
 }
 
 .housing-card {
+  width: 100%;
   max-width: 250px;
   height: 207px;
   border-radius: 20px;
@@ -384,7 +386,8 @@ h3 {
 }
 
 .activities-card {
-  width: 297.5px;
+  width: 100%;
+  max-width: 297.5px;
   height: 439px;
   border-radius: 20px;
   box-sizing: border-box;
@@ -431,4 +434,171 @@ footer div {
 
 footer h3 {
   margin: 0;
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  /* CSS trick for demonstration only */
+  .filter-buttons .active {
+    background-color: var(--main-bg-color);
+  }
+  .filter-buttons button:nth-child(2) {
+    background-color: var(--filter-bg-color);
+  }
+  /* spacer */
+
+  body {
+    /* TODO delete border*/
+    border: 2px solid red;
+    max-width: 375px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header img {
+    padding: 30px;
+  }
+
+  header nav {
+    gap: 0;
+    padding: 0;
+    max-width: 375px;
+    width: 100%;
+  }
+
+  header nav a {
+    width: 100%;
+    max-width: 187.5px;
+    padding: 0 0 15px 0;
+    border-bottom: 2px solid var(--main-bg-color);
+  }
+
+  header nav a.active {
+    border-top: 0;
+    border-bottom: 2px solid var(--main-color);
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "landing"
+      "popular"
+      "housing"
+      "activities"
+      "footer";
+    max-width: 375px;
+    padding: 0;
+  }
+
+  .landing {
+    grid-area: landing;
+    padding: 0 20px;
+    max-width: 375px;
+    box-sizing: border-box;
+  }
+
+  .search-bar {
+    max-width: 335px;
+  }
+
+  .search-button {
+    width: 49px;
+    border-radius: 15px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .search-button img {
+    display: block;
+  }
+
+  .search-text {
+    display: none;
+  }
+
+  .filters {
+    display: block;
+    max-width: 375px;
+  }
+
+  .filter-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    row-gap: 20px;
+  }
+
+  .filter-buttons button {
+    font-size: 14px;
+  }
+
+  .popular {
+    grid-area: popular;
+    padding: 30px 20px 30px 20px;
+    gap: 15px;
+    width: 375px;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+
+  .popular-title {
+    width: 335px;
+    padding: 0;
+  }
+
+  .housing {
+    grid-area: housing;
+    gap: 15px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 0;
+    height: auto;
+    max-width: 375px;
+  }
+
+  .housing-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .housing-card {
+    max-width: 335px;
+  }
+
+  .activities {
+    grid-area: activities;
+    width: 100%;
+    max-width: 375px;
+    box-sizing: border-box;
+  }
+
+  .activities-box {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .activities-card {
+    max-width: 315px;
+    height: 200px;
+
+    grid-template-rows: 70% auto;
+  }
+
+  footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    max-width: 375px;
+    margin: auto;
+  }
+
+  footer div {
+    padding: 0;
+  }
 }
