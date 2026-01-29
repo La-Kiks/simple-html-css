@@ -20,6 +20,12 @@ body {
   gap: 30px;
 }
 
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+}
 header {
   display: flex;
   flex-direction: row;
@@ -197,6 +203,7 @@ main {
   display: flex;
   justify-content: start;
   align-items: center;
+  background-color: white;
   border: 2px solid var(--darker-border-color);
   border-radius: 25px;
   height: 50px;
@@ -241,7 +248,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 30px;
+  padding: 30px;
   gap: 30px;
   border-radius: 15px;
   max-width: 429px;
@@ -256,7 +263,6 @@ main {
   width: 100%;
   max-width: 369px;
   height: 26px;
-  padding-top: 30px;
 }
 
 .popular-title img {
@@ -437,12 +443,70 @@ footer h3 {
 }
 
 @media (max-width: 1024px) {
+  body {
+    max-width: 1024px;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .filters h2 {
+    margin: 0;
+  }
+
+  .filters-button button {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .housing {
+    max-width: 924px;
+  }
+
+  .housing-card {
+    max-width: 268px;
+  }
+
+  .popular {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 924px;
+    max-height: auto;
+    gap: 20px;
+  }
+
+  .popular-title {
+    max-width: inherit;
+    grid-column: 1 / -1;
+    padding: 0;
+  }
+
+  .popular-card {
+    max-width: 274.6px;
+  }
+
+  .activities {
+    max-width: 924px;
+  }
+
+  .activities-card {
+    min-width: 193.5px;
+    max-width: 193.5px;
+    height: 270px;
+    grid-template-rows: 74% auto;
+  }
 }
 
 @media (max-width: 768px) {
   /* CSS trick for demonstration only */
   .filter-buttons .active {
-    background-color: var(--main-bg-color);
+    background-color: white;
   }
   .filter-buttons button:nth-child(2) {
     background-color: var(--filter-bg-color);
@@ -450,8 +514,6 @@ footer h3 {
   /* spacer */
 
   body {
-    /* TODO delete border*/
-    border: 2px solid red;
     max-width: 375px;
   }
 
@@ -524,6 +586,10 @@ footer h3 {
   .filters {
     display: block;
     max-width: 375px;
+  }
+
+  .filters h2 {
+    margin-bottom: 20px;
   }
 
   .filter-buttons {
