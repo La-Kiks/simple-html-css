@@ -109,8 +109,8 @@ p {
 main {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: clamp(8px, 2vw, 35px);
-  padding: 0 clamp(8px, 2vw, 50px);
+  gap: clamp(8px, 1vw, 35px);
+  padding: 0 clamp(8px, 1vw, 50px);
   width: 100%;
   max-width: 1440px;
   box-sizing: border-box;
@@ -349,8 +349,8 @@ h3 {
 .housing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-row: 1fr;
-  gap: 30px;
+  row-gap: 30px;
+  column-gap: clamp(5px, 1.5vw, 30px);
 }
 
 .housing-card {
