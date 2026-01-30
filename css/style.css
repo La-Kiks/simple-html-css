@@ -512,7 +512,6 @@ footer h3 {
   }
 
   .activities-card {
-    min-width: 193.5px;
     max-width: 193.5px;
     height: 270px;
     grid-template-rows: 74% auto;
