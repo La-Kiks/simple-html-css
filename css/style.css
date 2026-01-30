@@ -20,6 +20,12 @@ body {
   gap: 30px;
 }
 
+article {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
 input,
 button,
 select,
@@ -103,8 +109,8 @@ p {
 main {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 35px;
-  padding: 0 50px;
+  gap: clamp(8px, 2vw, 35px);
+  padding: 0 clamp(8px, 2vw, 50px);
   width: 100%;
   max-width: 1440px;
   box-sizing: border-box;
@@ -147,8 +153,9 @@ main {
   font-weight: 700;
   border-top: 1px solid var(--main-bg-color);
   border-bottom: 1px solid var(--main-bg-color);
-  flex: 1 1 auto;
-  min-width: 100px;
+  flex: 0 1 auto;
+  min-width: 160px;
+  width: 100%;
 }
 
 .search-input::placeholder {
@@ -240,6 +247,7 @@ main {
 
 .redirect-card {
   display: block;
+  width: 100%;
   text-decoration: none;
   color: inherit;
 }
@@ -254,6 +262,8 @@ main {
   max-width: 429px;
   max-height: 614px;
   background-color: var(--main-bg-color);
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .popular-title {
@@ -271,7 +281,6 @@ main {
 }
 
 .popular-card {
-  width: 100%;
   max-width: 369px;
   height: 146px;
   border-radius: 20px;
@@ -282,6 +291,7 @@ main {
 
   display: grid;
   grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
   overflow: hidden;
 }
 
@@ -290,6 +300,7 @@ main {
   border-bottom-left-radius: 20px;
   width: 100%;
   height: 100%;
+  max-height: 136px;
   object-fit: cover;
   display: block;
 }
@@ -298,7 +309,10 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px 5px 5px 15px;
+  padding: 10px;
+  height: 100%;
+  max-height: 136px;
+  box-sizing: border-box;
 }
 
 .popular-description h3 {
@@ -324,9 +338,7 @@ main {
   padding: 30px;
   background-color: var(--main-bg-color);
   border-radius: 15px;
-  width: 100%;
   max-width: 871px;
-  height: 614px;
   box-sizing: border-box;
 }
 .housing h2,
@@ -337,13 +349,14 @@ h3 {
 .housing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-row: 1fr;
   gap: 30px;
 }
 
 .housing-card {
-  width: 100%;
   max-width: 250px;
-  height: 207px;
+  max-height: 207px;
+  height: 100%;
   border-radius: 20px;
   padding: 5px;
   box-sizing: border-box;
@@ -360,7 +373,7 @@ h3 {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   width: 100%;
-  height: 100%;
+  height: 114px;
   object-fit: cover;
   display: block;
 }
@@ -517,7 +530,9 @@ footer h3 {
   /* spacer */
 
   body {
-    max-width: 375px;
+    margin: 0;
+    width: 100%;
+    min-width: 320px;
   }
 
   header {
@@ -533,13 +548,14 @@ footer h3 {
   header nav {
     gap: 0;
     padding: 0;
-    max-width: 375px;
+    margin: 0;
+    max-width: 100%;
     width: 100%;
   }
 
   header nav a {
     width: 100%;
-    max-width: 187.5px;
+    max-width: 100%;
     padding: 0 0 15px 0;
     border-bottom: 2px solid var(--main-bg-color);
   }
@@ -557,15 +573,16 @@ footer h3 {
       "housing"
       "activities"
       "footer";
-    max-width: 375px;
+    min-width: 320px;
     padding: 0;
+    margin: auto;
   }
 
   .landing {
     grid-area: landing;
     padding: 0 20px;
-    max-width: 375px;
     box-sizing: border-box;
+    align-items: center;
   }
 
   .search-bar {
@@ -588,7 +605,7 @@ footer h3 {
 
   .filters {
     display: block;
-    max-width: 375px;
+    width: 100%;
   }
 
   .filters h2 {
@@ -606,24 +623,34 @@ footer h3 {
     font-size: 14px;
   }
 
+  .callout {
+    width: 100%;
+  }
+
   .popular {
     grid-area: popular;
     display: flex;
     flex-direction: column;
+    align-items: start;
     padding: 30px 20px 30px 20px;
     gap: 15px;
-    max-width: 375px;
     max-height: 569px;
     box-sizing: border-box;
     border-radius: 0;
+    max-width: none;
   }
 
   .popular-card {
-    max-width: 335px;
+    max-width: none;
+    width: 100%;
+  }
+
+  .redirect-card {
+    display: flex;
+    align-items: center;
   }
 
   .popular-title {
-    width: 335px;
     padding: 0;
   }
 
@@ -634,7 +661,7 @@ footer h3 {
     background-color: white;
     border-radius: 0;
     height: auto;
-    max-width: 375px;
+    max-width: none;
   }
 
   .housing-grid {
@@ -643,13 +670,14 @@ footer h3 {
   }
 
   .housing-card {
-    max-width: 335px;
+    max-width: none;
+    width: 100%;
   }
 
   .activities {
     grid-area: activities;
     width: 100%;
-    max-width: 375px;
+    max-width: none;
     box-sizing: border-box;
   }
 
@@ -659,7 +687,7 @@ footer h3 {
   }
 
   .activities-card {
-    max-width: 315px;
+    max-width: none;
     height: 200px;
 
     grid-template-rows: 70% auto;
@@ -670,7 +698,7 @@ footer h3 {
     display: flex;
     flex-direction: column;
     padding: 30px;
-    max-width: 375px;
+    max-width: none;
     margin: auto;
   }
 
