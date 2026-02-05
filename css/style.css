@@ -523,15 +523,6 @@ footer h3 {
 }
 
 @media (max-width: 768px) {
-  /* CSS trick for demonstration only */
-  .filter-buttons .active {
-    background-color: white;
-  }
-  .filter-buttons button:nth-child(2) {
-    background-color: var(--filter-bg-color);
-  }
-  /* spacer */
-
   body {
     margin: 0;
     width: 100%;
