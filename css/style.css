@@ -218,6 +218,10 @@ main {
   gap: 10px;
 }
 
+.filter-buttons button:hover {
+  background-color: var(--filter-bg-color);
+}
+
 .filter-buttons img {
   width: 22px;
   height: 22px;
